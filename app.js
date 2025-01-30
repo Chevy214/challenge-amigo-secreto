@@ -16,10 +16,14 @@ function añadirAmigo(){
     else {
         nombresDeAmigos.push(nuevoNombre);
         asignarTextoElemento (`ul`, `${nombresDeAmigos}`);
-         
+         limpiar ();
         console.log(nombresDeAmigos)
     }
 }
 
+function limpiar(){
+    document.getElementById('amigo').value = '';
+
+}
 
 
