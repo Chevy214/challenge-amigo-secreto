@@ -9,21 +9,34 @@ function asignarTextoElemento(elemento, texto){
 
 function añadirAmigo(){
     let nuevoNombre = (document.getElementById('amigo').value);
-   
-    if (nuevoNombre === ""){
-        alert ('La caja está vacía, intenta de nuevo')
-    } 
-    else {
-        nombresDeAmigos.push(nuevoNombre);
-        asignarTextoElemento (`ul`, `${nombresDeAmigos}`);
-         limpiar ();
-        console.log(nombresDeAmigos)
+    if (nombresDeAmigos.includes(nuevoNombre)){
+        alert ('Ya se ingreso ese nombre, intenta de nuevo')
+        limpiar ();
     }
+    else{       
+        if (nuevoNombre === ""){
+            alert ('La caja está vacía, intenta de nuevo')
+        } 
+        else {
+            nombresDeAmigos.push(nuevoNombre);
+            asignarTextoElemento (`ul`, `${nombresDeAmigos}`);
+            limpiar ();
+            console.log(nombresDeAmigos)               
+        }      
+    } 
 }
+
+function sortearAmigo (){
+    let numeroMaximo = nombresDeAmigos.length
+
+    console.log (numeroMaximo)
+    let numeroAleatorio = Math.floor(Math.random()*numeroMaximo);
+    console.log (numeroAleatorio)
+
+    alert (`El amigo secreto es ${nombresDeAmigos[numeroAleatorio]}`)
+}
+
 
 function limpiar(){
     document.getElementById('amigo').value = '';
-
 }
-
-
