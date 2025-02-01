@@ -3,6 +3,7 @@ let nombresDeAmigos = []
 
 function añadirAmigo(){
     let nuevoNombre = (document.getElementById('amigo').value);
+    nuevoNombre = nuevoNombre.toUpperCase ();
         if (nombresDeAmigos.includes(nuevoNombre)){
         alert ('Ya se ingreso ese nombre, intenta de nuevo')
         limpiar ();
