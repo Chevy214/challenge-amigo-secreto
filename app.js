@@ -13,7 +13,7 @@ function añadirAmigo(){
         } 
         else {
             nombresDeAmigos.push(nuevoNombre);  
-            imprimirListaEnPantalla()          
+            crearLinea();       
             limpiar ();
             console.log(nombresDeAmigos)               
         }      
@@ -30,14 +30,27 @@ function sortearAmigo (){
     alert (`El amigo secreto es ${nombresDeAmigos[numeroAleatorio]}`)
 }
 
-function imprimirListaEnPantalla(){
+function crearLinea(){
     for (let i = 0; i < nombresDeAmigos.length; i++) {
-    const elementoPadre = document.getElementById("nombresDeAmigos");
-    let liElement = document.createElement("li");
-    elementoPadre.appendChild(liElement);
-    liElement.textContent = nombresDeAmigos[i];          
+        const elementoPadre = document.getElementById("nombresDeAmigos");
+        let liElement = document.createElement(`li`);
+        elementoPadre.appendChild(liElement); 
+        liElement.setAttribute("id", `l${i}`)
+        
+        asignarTextoElemento (`l${i}`, `${nombresDeAmigos[i]}`);       
     }
 }
+
+function asignarTextoElemento(elemento, texto){
+    let elementoHTML = document.getElementById(elemento);
+    elementoHTML.innerHTML = texto;
+    return;
+
+}
+
+
+//crear un contador de cuantas veces se ha usado la funcion crear linea
+//imprimir en li el "nombres de amigos [contador]"
 
 
 function limpiar(){
