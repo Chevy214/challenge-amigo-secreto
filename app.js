@@ -22,13 +22,17 @@ function añadirAmigo(){
 }
 
 function sortearAmigo (){
-    let numeroMaximo = nombresDeAmigos.length
-    
-    console.log (numeroMaximo)
-    let numeroAleatorio = Math.floor(Math.random()*numeroMaximo);
-    console.log (numeroAleatorio)
 
-    alert (`El amigo secreto es ${nombresDeAmigos[numeroAleatorio]}`)
+        if (nombresDeAmigos.length === 0 ){
+        alert ("No hay ningun amigo en tu lista")
+        }     else{
+        let numeroMaximo = nombresDeAmigos.length
+        console.log (numeroMaximo)
+        let numeroAleatorio = Math.floor(Math.random()*numeroMaximo);
+        console.log (numeroAleatorio)
+
+        alert (`El amigo secreto es ${nombresDeAmigos[numeroAleatorio]}`)
+        }
 }
 
 function crearLinea(){
