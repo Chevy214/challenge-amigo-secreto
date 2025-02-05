@@ -10,7 +10,7 @@ function añadirAmigo(){
     }
     else{       
         if (nuevoNombre === ""){
-            alert ('La caja está vacía, intenta de nuevo')
+            alert ('Por favor, inserte un nombre')
         } 
         else {
             nombresDeAmigos.push(nuevoNombre);  
