@@ -5,20 +5,22 @@ let numeroMaximo = ""
 let numeroAleatorio = ""
 let elementoHTML = ""
 
+
 function reiniciarJuego(){
     for (let i = -1; i < (nombresDeAmigos.length+i); i++){
         nombresDeAmigos.pop ();
         }
-    
     limpiar();
     limpiarLista();
     limpiarListaEnPantalla();
     asignarTextoElemento (`resultado`, ``)
     console.log (nombresDeAmigos)
+    document.getElementById("reiniciarJuego").setAttribute('disabled', 'false');
+      
 }
 
 function añadirAmigo(){
-    console.log (nombresDeAmigos)
+            console.log (nombresDeAmigos)
     nuevoNombre = (document.getElementById('amigo').value);
     nuevoNombre = nuevoNombre.toUpperCase ();
         if (nombresDeAmigos.includes(nuevoNombre)){
@@ -33,7 +35,8 @@ function añadirAmigo(){
             nombresDeAmigos.push(nuevoNombre);  
             crearLinea();       
             limpiar ();
-            console.log(nombresDeAmigos)               
+            console.log(nombresDeAmigos)      
+                     
         }      
     } 
 }
@@ -48,9 +51,11 @@ function sortearAmigo (){
         numeroAleatorio = Math.floor(Math.random()*numeroMaximo);
         console.log (numeroAleatorio)
         asignarTextoElemento (`resultado`, `El amigo secreto es: ${nombresDeAmigos[numeroAleatorio]}`)  
-        limpiarListaEnPantalla();        
+        limpiarListaEnPantalla();   
+        document.getElementById("reiniciarJuego").removeAttribute('disabled')  
         }
 }
+
 
 function crearLinea(){
     for (let i = 0; i < nombresDeAmigos.length; i++) {
